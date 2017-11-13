@@ -1,7 +1,7 @@
 # PHP7 - PHPUNIT Docker
 
 A series of docker files with different things for working with Composer, PHPUnit, XDebug,
-Sqlite3, and MySQL to make CI/CD a little easier.
+Sqlite3, MySQL and Postgres to make CI/CD a little easier.
 
 Intended for usage in a CI environment (Travis, Gitlab, Drone, etc.):
  - PHP7 (based off the [official](https://hub.docker.com/_/php/) PHP Docker)
@@ -23,13 +23,13 @@ The docker hub page can be found here:
 
 ### Command Line
 ```
-docker pull epcallan/php7-testing-phpunit:7.1-phpunit5
+docker pull janrtr/php7-testing-phpunit:7.1-phpunit5
 ```
 
 ### Drone
 ```
 build:
-  image: epcallan/php7-testing-phpunit:7.1-phpunit5
+  image: janrtr/php7-testing-phpunit:7.1-phpunit5
   commands:
     - composer install
     - phpunit
@@ -37,7 +37,7 @@ build:
 
 ### Gitlab
 ```
-image: epcallan/php7-testing-phpunit:7.1-phpunit5
+image: janrtr/php7-testing-phpunit:7.1-phpunit5
 
 before_script:
   - composer install
@@ -52,7 +52,7 @@ in_docker:
 
 ## Building Additions Yourself
 
-If you want to add Postgres or ODBC or another PHP extension to the mix, simply clone this repository and add the additions into any of the `Dockerfile`'s and then build them (for example: `docker build php7.1-phpunit6`).
+If you want to add ODBC or another PHP extension to the mix, simply clone this repository and add the additions into any of the `Dockerfile`'s and then build them (for example: `docker build php7.1-phpunit6`).
 
 If you'd like to see this enable a basic extension, feel free to submit an issue.
 
