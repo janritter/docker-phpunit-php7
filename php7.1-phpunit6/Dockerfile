@@ -16,7 +16,7 @@ RUN apt-get update -yqq \
 
 RUN curl -fsSL https://getcomposer.org/installer | php \
     && mv composer.phar /usr/local/bin/composer \
-    && composer global require phpunit/phpunit ^6.* --no-progress --no-scripts --no-interaction
+    && composer global require phpunit/phpunit ^6 --no-progress --no-scripts --no-interaction
 
 RUN pecl install xdebug \
     && echo 'zend_extension=/usr/local/lib/php/extensions/no-debug-non-zts-20160303/xdebug.so' > \
